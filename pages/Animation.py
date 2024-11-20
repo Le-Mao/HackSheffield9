@@ -7,7 +7,6 @@ from math import sin, cos, pi
 import main
 
 from environment import *
-from herbivore import *
 
 MAX_SHOWN_ON_MAP = 500
 
@@ -92,7 +91,9 @@ def eatpreysOnMap(prey_population, predator_population, prey_size, prey_colour, 
 
 def doIterationAndDisplay():
     last_iteration = main.do_iteration()
-    eatpreysOnMap(main.plant.population, main.moose.population, 1, "#00ff00", "#4d2c1f", main.plant.name, main.moose.name)
+    plant = main.plants[0]
+    moose = main.animals[0]
+    eatpreysOnMap(plant.population, moose.population, 1, "#00ff00", "#4d2c1f", plant.name, moose.name)
 
 
 st.button(label="Do Next Iteration", on_click=doIterationAndDisplay )

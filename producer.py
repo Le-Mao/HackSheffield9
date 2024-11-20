@@ -9,6 +9,7 @@ class Producer(Organism):
     
     def grow(self, amount):
         env = self.environment
-        self.population = min(env.plantCap, int(self.population + amount))
+        Organism.grow(self, min(amount, env.plantCap - self.population))
+        #self.population = min(env.plantCap, int(self.population + amount))
     
     

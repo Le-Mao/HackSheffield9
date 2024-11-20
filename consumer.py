@@ -24,5 +24,4 @@ class Consumer(Organism):
     def getDemand(self):
         return self.food_demand * self.population
    
-    def grow(self, amount:int):
-        self.population = max(0, int(self.population + amount))
+    
