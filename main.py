@@ -1,14 +1,14 @@
 from environment import *
-from animal import *
+from consumer import *
 from producer import *
 from plot import *
 
 def initialise():
     env = Environment(1.2, 300)
     plant = Producer("plant", env, 100)
-    moose = Animal("moose", 100, 1, 0.7, 2)
-    wolves = Animal("wolf", 100, 0.3, 0.3, 1.5)
-    humans = Animal("human", 10, 0.25, 0.1, 1.3)
+    moose = Consumer("moose", 100, 1, 0.7, 2)
+    wolves = Consumer("wolf", 100, 0.3, 0.3, 1.5)
+    humans = Consumer("human", 10, 0.25, 0.1, 1.3)
     moose.food_sources = [plant]
     wolves.food_sources = [moose]
     humans.food_sources = [plant, moose, wolves]
